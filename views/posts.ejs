@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>posts</title>
+</head>
+<body>
+    <section class="block block--primary">
+        <h2 class="heading" data-aos="flip-up" data-aos-delay="300">posts filter</h2>
+        <div class="line line-black"></div>
+        <div class="posts">
+            <form action="/postsForm" method="POST">
+                <div class="postsForm flex flex-row">
+                    <div class="flex flex-row posts__form">
+                        <label for="city">cities : </label>
+                        <select class="inputs" name="city" id="city">
+                            <option value="all">all</option>
+                            <% cities.forEach(city =>{%>
+                                <option value="<%= city.name %>"><%= city.name %></option>
+                            <%});%>
+                        </select>
+                    </div>
+                    
+                    <div class="flex flex-row posts__form">
+                        <label for="category">categories : </label>
+                        <select class="inputs" name="category" id="category" required>
+                            <option value="all">all</option>
+                            <% categories.forEach(category =>{%>
+                                <option value="<%= category.name %>"><%= category.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <button type="submit" class="submitPostsForm">submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- <div class="postsTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>author's username</th>
+                        <th>author's badge</th>
+                        <th>author's phonenumber</th>
+                        <th>author's address</th>
+                        <th>author 's city</th>
+                        <th>name</th>
+                        <th>description</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% posts.forEach(post => {%>
+                        <tr>
+                            <td><%= post.authorUsername %></td>
+                            <td><%= post.authorBadge %></td>
+                            <td><%= post.authorPhoneNumber %></td>
+                            <td><%= post.authorAddress %></td>
+                            <td><%= post.authorCity %></td>
+                            <td><%= post.name %></td>
+                            <td><%= post.description %></td>
+                            <td><%= post.date.toDateString() %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div> -->
+    </section>
+    <span class="span flex flex-row">
+        <a href="/"><img src="/imgs/home (1).png" alt=""></a>
+    </span>
+</body>
+</html>

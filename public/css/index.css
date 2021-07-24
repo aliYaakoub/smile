@@ -1,0 +1,849 @@
+html{
+    font-size: 62.5%;
+    font-family: 'raleway',Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+}
+:root{
+    box-sizing: border-box;
+    --color-gradient:linear-gradient(120deg, rgb(235, 130, 82) 30%, rgb(46, 137, 155) 80%);;
+    --color-primary: rgb(235, 130, 82);
+    --color-secondary: rgb(46, 137, 155);
+    --color-third:rgb(75, 74, 74);
+    --color-grad : linear-gradient(90deg, rgb(11, 179, 170), #102040);
+    --color-grad-2 : linear-gradient(90deg, rgb(54, 179, 71), #0b5327);
+    --color-profile-red : linear-gradient(90deg, rgb(207, 44, 44), #161616);
+    --color-profile-red-back : rgb(207, 44, 44);
+    --color-profile-blue :linear-gradient(90deg, #102040, #161616);
+    --color-profile-blue-back :#102040;
+    --color-profile-green : linear-gradient(90deg, rgb(54, 179, 71), #161616);
+    --color-profile-green-back :rgb(54, 179, 71)
+}
+.fade1{
+    background-color: var(--color-primary);
+    background-image: linear-gradient( rgb(235, 130, 82) , rgb(46, 137, 155));
+    height: 3rem;
+    padding: 3rem 0;
+}
+.fade2{
+    background-color: var(--color-secondary);
+    background-image: linear-gradient(  rgb(46, 137, 155),rgb(235, 130, 82));
+    height: 3rem;
+    padding: 3rem 0;
+}
+.fade3{
+    background-color: var(--color-secondary);
+    background-image: linear-gradient(  rgb(46, 137, 155),#333);
+    height: 3rem;
+    padding: 3rem 0;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.flex-between{
+    justify-content: space-between;
+}
+.flex-arround{
+    justify-content: space-around;
+}
+.grid{
+    display: grid;
+}
+.grid-1x3{
+    grid-template-columns: repeat(3,1fr);
+}
+.grid-row{
+    grid-template-rows: repeat(2, 1fr);
+}
+.grid-column{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.block{
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+.block--primary{
+    background: var(--color-primary);
+}
+.block--gradient{
+    background: var(--color-gradient);
+}
+.block--secondary{
+    background: var(--color-secondary);
+}
+.block--third{
+    background: var(--color-third);
+}
+.block--login{
+    background-color: rgb(11, 179, 170);
+    background-image: var(--color-grad);
+}
+.block--register{
+    background-color: rgb(54, 179, 71);
+    background-image: var(--color-grad-2);
+}
+.block--contact{
+    background: #333;
+}
+h2{
+    font-size: 5rem;
+    margin: 0;
+    font-weight: 900;
+    text-shadow: 10px 10px 8px rgb(24, 24, 24);
+}
+h3{
+    font-size: 3rem;
+    margin: 0;
+}
+p{
+    font-size: 2rem;
+}
+
+.line{
+    border: 1px solid;
+    width: 65%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.skin--black{
+    color: black;
+}
+.skin--white{
+    color: white;
+}
+
+/******************************** header *****************************/
+.header-background{
+    background: url(../imgs/rawshe3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(2px);
+    padding: 0;
+}
+.header{
+    position: relative;
+    padding: 0;
+}
+.heading{
+    text-align: center;
+    padding: 40px;
+}
+.headingRight{
+    text-align: right;
+    padding: 40px;
+    font-size: 4rem;
+    border-bottom: 1px dashed black;
+}
+.header-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    width: 60%;
+    height: 30%;
+    text-align: center;
+    font-size: 8rem;
+}
+.header__prefix{
+    font-size: 3.5rem;
+    margin: 0;
+    font-family: 'Festive';
+    font-weight: 200;
+    color: white;
+}
+.header-title h1{
+    color: white;
+    margin: 0;
+    letter-spacing: .3rem;
+    font-family: 'Festive';
+    font-weight: 200;
+}
+.anchor{
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+}
+.anchor a{
+    color:white;
+    text-decoration: none;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+.go-down-arrow {
+    /*background: url(https://cdn-blmce.nitrocdn.com/JacqyZFxQpwHdBhotwjfAiEYlUcIzQnR/assets/static/optimized/rev-b4f20c6/wp-content/themes/loungelizard/assets/images/down@2x.png) no-repeat center;*/
+    background: url(/imgs/arrow-down.png) no-repeat center;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+/****************************** first section *****************************/
+
+.half{
+    width: 50vw;
+}
+
+.imgg{
+    width:100%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px #222;
+}
+.imageDiv,.first,.second{
+    margin: 20px;
+}
+
+.catchingUp p::first-letter {
+    font-size: 200%;
+}
+
+/************************* login form **************************/
+
+.quote , .quoteIndex{
+    color: #fff;
+    font-weight: 300;
+    font-family: 'Zen Loop',Arial, Helvetica, sans-serif;
+    justify-content: center;
+}
+.quote__content{
+    padding: 0 15rem 0;
+}
+.quote{
+    margin-right: 6rem;
+    width: 600px;
+    height: 50vh;
+}
+.doubleQuotesL{
+    width: 80px;
+    margin: 0 3rem 0 0;
+    transform: rotate(180deg);
+}
+.doubleQuotesR{
+    width: 80px;
+    margin: 0  0  0 3rem;
+}
+.quote p{
+    font-size: 7rem;
+    margin: 0px;
+    line-height: 1.5;
+}
+.quoteIndex p{
+    font-size: 10rem;
+    margin: 0px;
+    line-height: 1.5;
+    text-align: center;
+}
+.author{
+    align-self: flex-end;
+    font-style: italic;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container a {
+  text-decoration: none;
+  color: rgb(2, 247, 235);
+}
+.con a {
+  text-decoration: none;
+  color: rgb(71, 231, 93);
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: lightblue;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 6px 6px 12px rgba(34, 34, 34, 0.4);
+}
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.text {
+  margin-top: 30px;
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+.selecteDiv{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: rgb(2, 247, 235);
+}
+/* for register page*/
+.con .form-control input:focus,
+.con .form-control input:valid {
+  outline: 0;
+  border-bottom-color: rgb(71, 231, 93);
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: rgb(2, 247, 235);
+  transform: translateY(-30px);
+}
+.con .form-control input:focus + label span,
+.con .form-control input:valid + label span {
+  color: rgb(71, 231, 93);
+  transform: translateY(-30px);
+}
+
+.err.msg{
+    padding: 10px 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: red;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+.login .btnCancel{
+    margin-top: 10px;
+    width: 90%;
+}
+.login .btnCancel:hover{
+    background: rgb(2, 247, 235);
+    border-color: rgb(2, 247, 235);
+    color: black;
+}
+
+/************************** register div ************************/
+.registerDiv{
+    margin: 0 20px;
+}
+.btnRegisterDiv{
+    width: 95%;
+    margin: 20px auto 20px;
+    justify-content: space-evenly;
+}
+.btnRegisterDiv a{
+    color: white;
+}
+.btnRegister{
+  cursor: pointer;
+  display: inline-block;
+  width: 60%;
+  background: lightblue;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.con .btnRegister{
+    background: rgb(71, 231, 93);
+}
+
+.btnCancel{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid black;
+    width: 50%;
+    font-size: 16px;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btnCancel:hover{
+    background: rgb(71, 231, 93);
+    border-color: rgb(71, 231, 93);
+    color: black;
+}
+
+.btnRegister:focus , .btnCancel:focus {
+  outline: 0;
+}
+
+.btnRegister:active ,.btnCancel:active {
+  transform: scale(0.98);
+}
+
+.city{
+  background: transparent;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+.cityDiv label {
+    font-size: 18px;
+    pointer-events: none;
+    margin-right: 20px;
+}
+.cityDiv{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.city:focus,
+.city:valid {
+  outline: 0;
+}
+
+.city:focus{
+  border-bottom-color: rgb(71, 231, 93);
+  color: rgb(71, 231, 93);
+}
+
+.city:focus + label ,
+.city:valid + label {
+  color: rgb(71, 231, 93);
+}
+.city option{
+    background: #222;
+    border: 1px;
+}
+
+
+/************************* section of images ********************/
+
+.card{
+    width: 100%;
+    height: 100%;
+    background: #222;
+    border-radius: 10px;
+    transition: filter 0.2s, transform 0.2s;
+}
+.container2{
+    margin: 10px auto;
+    width: 370px;
+    height: 370px;
+    margin: 0px auto 40px;
+    position: relative;
+    word-wrap: break-word;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.container2:hover .p{
+    display: inline-block;
+}
+.container2:hover .card{
+    filter: blur(5px);
+    transform: scale(1.05);
+}
+.container2 .p{
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    display: none;
+    color: white;
+    transition: background 0.2s;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    max-height: 60%;
+    overflow:hidden;
+}
+
+
+/************************* articals **************************/
+.article1 , .article2{
+    margin: 20px 50px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.article1 a , .article2 a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+}
+.article2 p ,.article1 p {
+    line-height: 2;
+}
+
+#charities a{
+    text-decoration: none;
+    font-size: 3rem;
+    color: white;
+    transition: 0.5s;
+}
+#charities a:hover{
+    transform: scale(1.2);
+    color: black;
+}
+
+/************************** profile ***********************/
+.profile{
+    background: var(--color-profile-red-back);
+    background-image: var(--color-profile-red);
+    color: white;
+    position: relative;
+}
+.profile h1 {
+    margin: 0;
+    font-size: 4rem;
+}
+.profile header{
+    height: 10vh;
+    padding: 15px;
+    margin-left: 10rem;
+}
+.donation{
+    margin-top: 50px;
+}
+.donationTable{
+    margin-top: 50px;
+    padding: 15px;
+}
+.postsTable{
+    margin-top: 20px;
+    padding: 15px;
+}
+.donationTable h1{
+    font-size: 3rem;
+}
+table{
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 5px;
+}
+table , tr , td , th{
+    border-collapse: collapse;
+    border: 1px solid white;
+    padding: 10px 0;
+}
+.postsTable tr ,.postsTable td ,.postsTable th{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px 0;
+}
+.displayNone {
+    display: none;
+}
+.donationForm{
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.7rem;
+}
+.inputs{
+    width: 200px;
+    background: transparent;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    border-right: 2px #fff solid;
+    cursor: pointer;
+    color: white;
+}
+.inputs option{
+    background: black;
+}
+.donationForm label{
+    margin-right: 2rem;
+}
+
+.link{
+    margin: 2rem 0;
+    font-size: 2rem;
+    display: block;
+}
+.link a{
+    text-decoration: none;
+    color: white;
+    padding: 0;
+    transition: 0.5s;
+}
+.submitForm{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    outline: 0;
+    border: 1px solid white;
+    background: transparent;
+    transition: 0.5s;
+    color: white;
+}
+.submitForm:hover{
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+.submitForm:active {
+  transform: scale(0.98);
+}
+
+#nav{
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    right: -200px;
+    top: 0;
+    background-color: #222;
+    padding: 10px;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.open{
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 3rem;
+}
+#close{
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 3rem;
+    align-self: right;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+.settings{
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 2rem 0 ;
+}
+.settings__svg{
+    fill: white;
+    width: 50px;
+}
+.settings__cust{
+    height: 50px;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    outline: 0;
+    border: 0;
+}
+.settings__cust option{
+    background: black;
+}
+
+.header__profile{
+    align-items: center;
+}
+
+#badge{
+    margin-left: 2rem;
+    background-color: aqua;
+    padding: 1rem 3rem;
+    font-size: 2.5rem;
+    border-radius: 15px;
+    color: black;
+}
+
+/****************** posts form *************************/
+.postsForm{
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.7rem;
+    color: black;
+}
+.submitPostsForm{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+.submitPostsForm:hover{
+    background: black;
+    color: white; 
+    transform: scale(1.1);
+}
+.submitPostsForm:active {
+  transform: scale(0.98);
+}
+
+.postsForm label{
+    margin-right: 2rem;
+}
+
+.postsForm .inputs{
+    width: 200px;
+    background: transparent;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px black solid;
+    border-right: 2px black solid;
+    color: black;
+}
+.postsForm .inputs option{
+    color: white;
+}
+
+/* arrow */
+.span{
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    width: 40px;
+}
+.span a{
+    width: 100%;
+    margin: 1rem;
+}
+
+/*************************** articles *********************************/
+.articles p{
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 1rem 1rem 3rem 1rem;
+}
+.paragraphes{
+    margin-top: 3rem;
+}
+
+/************************** management **************************/
+
+.managementForm{
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.7rem;
+}
+.managementForm .inputs{
+    color: black;
+    border-color: black;
+}
+.managementForm .submitForm{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid black;
+    transition: 0.5s;
+    color: black;
+}
+.submitForm:hover{
+    background: black;
+    color: white; 
+    transform: scale(1.1);
+}
+.margin{
+    margin: 2rem;
+}
+
+/************************** manual ***********************/
+.manual{
+    width: 50vw;
+    margin: 0 auto;
+}
+.manual p{
+    padding-left: 3rem;
+}
+.manualSect{
+    margin-bottom: 3rem;
+}
+
+
+.lists{
+    margin: 0 8rem 0;
+}
+.num{
+    padding-left: 4rem;
+}
+.list__elem{
+    margin-top: 4rem;
+}
+.lists p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/********************* contact *****************************/
+.contact{
+    height: 30vh;
+    color: #fff;
+    text-align: center;
+}
+.contact p{
+    font-size: 3rem;
+    margin: 0;
+    padding-top: 4rem;
+}
+.logos img{
+    width: 50px;
+    margin: 5rem 5rem 0;
+    transition: 1s;
+}
+.logos img:hover{
+    transform: scale(1.4);
+}

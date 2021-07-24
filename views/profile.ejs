@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>profile</title>
+</head>
+<body>
+    <section class="block profile">
+        <header>
+            <span class="header__profile flex flex-row">
+                <h1>Welcome Back <%= username %>.</h1>
+                <span id="badge"><%=badge%></span>
+            </span>
+            <p>you have made a total of <%= numberOfDonation %> donations</p>
+        </header>
+        <div class="donation">
+            <form action="/profile/:username" method="POST">
+                <div class="donationForm flex flex-row">
+                    <div class="flex flex-row profile__form">
+                        <label for="name">name : </label>
+                        <input class="inputs" type="text" name="name" id="name" required>
+                    </div>
+                    <div class="flex flex-row profile__form">
+                        <label for="description">description : </label>
+                        <input class="inputs" type="text" name="description" id="description">
+                    </div>
+                    <div class="flex flex-row">
+                        <label for="category">category : </label>
+                        <select class="inputs" name="category" id="category" required>
+                            <% categories.forEach(category =>{%>
+                                <option value="<%= category.name %>"><%= category.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <button type="submit" class="submitForm">submit</button>
+                </div>
+                <div class="flex flex-row displayNone">
+                    <div class="flex flex-column">
+                        <label for="authorName">author name</label>
+                        <input type="text" name="authorUsername" id="authorUsername"  value="<%= username %>">
+                    </div>
+                    <div class="flex flex-column">
+                        <label for="authorPhoneNumber">author phone number</label>
+                        <input type="text" name="authorPhoneNumber" id="authorPhoneNumber"  value="<%= autherPhonenumber %>">
+                    </div>
+                    <div class="flex flex-column">
+                        <label for="authorAddress">author address</label>
+                        <textarea type="text" name="authorAddress" id="authorAddress" ><%= authorAddress %></textarea>
+                    </div>
+                    <div class="flex flex-column">
+                        <label for="authorCity">author phone number</label>
+                        <input type="text" name="authorCity" id="authorCity"  value="<%= authorCity %>">
+                    </div>
+                    <div class="flex flex-column">
+                        <label for="authorBadge">author's badge</label>
+                        <input type="text" name="authorBadge" id="authorBadge"  value="<%= authorBadge %>">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="donation">
+            <form action="/profile/:username?_method=DELETE" method="POST">
+                <div class="donationForm flex flex-row">
+                    <h3>to delete a post please pass the id here : </h3>
+                    <div class="flex flex-row profile__form">
+                        <label for="id">id : </label>
+                        <input class="inputs" type="text" name="id" id="id" required>
+                    </div>
+                    <button type="submit"class="submitForm">delete</button>
+                </div>
+            </form>
+        </div>
+        <div class="donationTable">
+            <h1>your donations :</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>description</th>
+                        <th>category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% posts.forEach(post => {%>
+                        <tr>
+                            <td><%= post._id %></td>
+                            <td><%= post.name %></td>
+                            <td><%= post.description %></td>
+                            <td><%= post.category %></td>
+                            <td><%= post.date.toDateString() %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <span class="open"><a id="open">open nav</a></span>
+    <nav id="nav">
+        <span id="close">X</span>
+        <div class="settings flex flex-row flex-center">
+            <img class="settings__svg" src="/imgs/settings.png">
+            <select onchange="themeColorChange(this)" class="settings__cust" name="cust" id="cust">
+                <option value="red">red theme</option>
+                <option value="blue">blue theme</option>
+                <option value="green">green theme</option>
+            </select>
+        </div>
+        <div class="setting__">
+            <form action="/profile/changeUsername">
+                <label for="changeUsername">change username : </label>
+                <input type="text" name="changeUsername" id="changeUsername">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <div class="link"><a href="/">Home</a>
+        <div class="link"><a href="/login">Logout</a></div>
+    </nav>
+    <script src="/javascript/profileCUST.js"></script>
+    <script src="/javascript/openNav.js"></script>
+</body>
+</html>
