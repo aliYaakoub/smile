@@ -26,19 +26,19 @@ const Category = require('../model/category');
 router.post('/postsForm',async (req,res)=>{
     //res.redirect('/postsTable')
     if (req.body.city === 'all' && req.body.category === 'all'){
-        const posts = await Post.find();
-        res.render('postsTable',{posts : posts })
+        const posts = await Post.find().sort('date');
+        res.render('postsTable',{posts : posts });
     } 
     else if (req.body.city === 'all'){
-        const posts = await Post.find({category : req.body.category});
-        res.render('postsTable',{posts : posts })
+        const posts = await Post.find({category : req.body.category}).sort('date');
+        res.render('postsTable',{posts : posts });
     }else if (req.body.category === 'all'){
-        const posts = await Post.find({authorCity : req.body.city});
-        res.render('postsTable',{posts : posts})
+        const posts = await Post.find({authorCity : req.body.city}).sort('date');
+        res.render('postsTable',{posts : posts});
     }
     else{
-        const posts = await Post.find({authorCity : req.body.city , category : req.body.category});
-        res.render('postsTable',{posts : posts })
+        const posts = await Post.find({authorCity : req.body.city , category : req.body.category}).sort('date');
+        res.render('postsTable',{posts : posts });
     }
 });
 
