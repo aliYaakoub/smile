@@ -84,13 +84,15 @@
 
     <section class="fade2"></section>
 
-    <section class="block block--primary">
+    <section id="management" class="block block--primary">
         <h2 class="heading">management</h2>
         <div class="line line-black"></div>
         <div class="managementForm__posts">
             <form action="/admins?_method=DELETE" method="POST">
                 <div class="managementForm flex flex-column">
                     <h3 class="margin">to delete a post or an account please pass the id down here : </h3>
+                    <p class="msg"><%= msg %></p>
+                    <p class="msg"><%= err %></p>
                     <div class="margin flex flex-row">
                         <div class="flex flex-row profile__form margin">
                             <label for="id">id : </label>

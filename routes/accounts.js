@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer');
+const City = require('../model/city')
 
 router.post('/', async (req, res,next) => {
     req.account = new Account();
-    next()
+    next();
 },saveAccountAndRedirect('register'));
 
 
@@ -29,11 +31,15 @@ function saveAccountAndRedirect(path){
         }catch(err){
             let username = await Account.findOne({username:req.body.username});
             if(username){
-                return res.status(400).send('username already exist');
+                //return res.status(400).send('username already exist');
+                const cities = await City.find();
+                return res.render('register',{cities : cities , msg : 'username already exist'});
             }
             let email = await Account.findOne({email:req.body.email});
             if(email){
-                return res.status(400).send('email already registered');
+                //return res.status(400).send('email already registered');
+                const cities = await City.find();
+                return res.render('register',{cities : cities , msg : 'email already exist'});
             }
             console.log(err);
             res.redirect(`/${path}`);

@@ -85,7 +85,7 @@ app.get('/article6',(req,res)=>{
 
 //go to the login page
 app.get('/login',(req,res)=>{
-    res.render('login');
+    res.render('login' , {msg : ''});
 })
 
 
@@ -97,7 +97,7 @@ app.get('/login',(req,res)=>{
 // register for a new account
 app.get('/register',async (req,res)=>{
     const cities = await City.find();
-    res.render('register',{cities : cities});
+    res.render('register',{cities : cities , msg : ''});
 });
 
 //app.post('/login',(passport.authenticate('local',{

@@ -9,12 +9,14 @@ router.post('/', async (req, res) => {
 
     let account = await Account.findOne({email:req.body.email});
     if(!account){
-        return res.status(400).send('invalid email or password');
+        //return res.status(400).send('invalid email or password');
+        return res.render('login',{msg : 'invalid email or password'});
     }
 
     const validPassword = await bcrypt.compare(req.body.password, account.password);
     if(!validPassword){
-        return res.status(400).send('invalid email or password');
+        //return res.status(400).send('invalid email or password');
+        return res.render('login',{msg : 'invalid email or password'});
     }
 
     if(!account.isAdmin)
