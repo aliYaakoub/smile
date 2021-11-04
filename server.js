@@ -29,7 +29,7 @@ const variable = require('./src/model/city');
 
 // connection online 
 
-const uri = proccess.env.DATABASE_URL;
+const uri = `${proccess.env.DATABASE_URL}`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //client.connect(err => {
