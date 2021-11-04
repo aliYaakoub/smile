@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const nodemailer = require('nodemailer');
 const City = require('../model/city')
 
 router.post('/', async (req, res,next) => {
