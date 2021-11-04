@@ -3,24 +3,24 @@ const express = require('express');
 //const session = require('express-session');
 //const passport = require('passport');
 //const localStrategy = require('passport-local').Strategy;
-const City = require('./model/city');
-const Category = require('./model/category');
-const Account = require('./model/account');
-const AccountRouter = require('./routes/accounts');
-const PostsRouter = require('./routes/posts');
-const AuthRouter = require('./routes/auth');
-const AdminsRouter = require('./routes/admins');
-const profileRouter = require('./routes/profile')
+const City = require('./src/model/city');
+const Category = require('./src/model/category');
+const Account = require('./src/model/account');
+const AccountRouter = require('./src/routes/accounts');
+const PostsRouter = require('./src/routes/posts');
+const AuthRouter = require('./src/routes/auth');
+const AdminsRouter = require('./src/routes/admins');
+const profileRouter = require('./src/routes/profile')
 const app = express();
 const bcrypt = require('bcrypt');
 const methodOverride = require('method-override');
-const Post = require('./model/post')
+const Post = require('./src/model/post')
 
 const { MongoClient } = require('mongodb');
 
-const accounts = require('./routes/accounts');
-const posts = require('./routes/posts');
-const variable = require('./model/city');
+const accounts = require('./src/routes/accounts');
+const posts = require('./src/routes/posts');
+const variable = require('./src/model/city');
 
 //connection to mongo
 //mongoose.connect('mongodb://localhost/smileMk2',{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true})
