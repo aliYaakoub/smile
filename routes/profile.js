@@ -71,16 +71,6 @@ router.delete('/:username', async (req,res,next)=>{
     next()
 });
 
-router.post('/changeUsername',async (req,res)=>{
-    let account = await Account.findOne({username : post.authorUsername});
-    if (await Account.findOne({username : req.body.changeUsername})){
-        res.send('username already exist');
-    }
-    else {
-        account.username = req.body.changeUsername;
-        await account.save;
-    }
-});
 
 
 module.exports = router;

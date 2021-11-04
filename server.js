@@ -29,7 +29,7 @@ const variable = require('./model/city');
 
 // connection online 
 
-const uri = "mongodb+srv://smile_official:smile_official@smile.pfcn2.mongodb.net/smile?retryWrites=true&w=majority"
+const uri = proccess.env.DATABASE_URL;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //client.connect(err => {
@@ -89,6 +89,21 @@ app.get('/login',(req,res)=>{
 })
 
 
+// app.get('/changeUsername',async (req,res)=>{
+//     let account = await Account.findOne({username : req.params.username});
+//     try{
+//         if (await Account.findOne({username : req.body.changeUsername})){
+//             res.send('username already exist');
+//         }
+//         else {
+//             account.username = req.body.changeUsername;
+//             await account.save();
+//         }
+//     }catch(err){
+//         console.log(err);
+//     }
+// });
+
 //go to the posts page
 //app.get('/posts',async (req,res)=>{
 //});
@@ -138,4 +153,4 @@ app.get('/logout',(req,res)=>{
 //  }
 //});
 
-app.listen(5000);
+app.listen(4000);
